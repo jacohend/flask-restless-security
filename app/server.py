@@ -5,7 +5,7 @@ from flask.ext.restless import APIManager
 from flask_jwt import JWT, jwt_required
 
 from database import db
-from application import app
+from application import app, mail
 from models import User, SomeStuff, user_datastore
 from admin import init_admin
 
@@ -86,10 +86,11 @@ def bootstrap_app():
         if db.session.query(User).count() == 0:
             create_test_models()
 
+mail.init_app(app)
+db.init_app(app)
+with app.app_context():
+    db.create_all()
 
 # Start server  ===============================================================
 if __name__ == '__main__':
-    db.init_app(app)
-    with app.app_context():
-        db.create_all()
     app.run()
