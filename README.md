@@ -19,9 +19,9 @@ http://stackoverflow.com/a/24258886/700283
 Setup
 =====
 
-- Create and activate a vitualenv
-- Run `pip install -r requirements.txt`
-- Start server using `python server.py`
+- Setup a postgres database, or edit config.py with your own db URI
+- Build docker image from dockerfile
+- Run docker container with 'docker run -e DB_USER=user -e DB_PASS=pass -e DB_HOST=host -e DB_NAME=name -e SERVER_ENV=Production|Development|Testing -e APP_NAME=app -e SECRET_KEY=key -e SECURITY_PASSWORD_SALT=salt  <image name>'
 
 **Website**
 
