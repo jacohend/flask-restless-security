@@ -13,7 +13,7 @@ Plus stubs for
 - Templates
 - Testing
 
-I got the basic idea from Nic:
+Github user "graup" got the basic idea from Nic:
 http://stackoverflow.com/a/24258886/700283
 
 Setup
